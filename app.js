@@ -19,16 +19,19 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
 app.use(useragent.express(),function (req,res,next){
-  if (req.useragent.isDesktop){
+  // idpad
+  if (req.useragent.isiPad){
     // 自定义layout.ejs的位置
+    app.set('layout', 'layouts/ipad/layout');
+    //mobile
+  } else if (req.useragent.isMobile) {
     app.set('layout', 'layouts/mobile/layout');
-  } else {
+    // computer
+  }else {
     app.set('layout', 'layouts/web/layout');
   }
   next();
 });
-// 自定义layout.ejs的位置
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
