@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var useragent = require('express-useragent');
 const expressLayouts = require('express-ejs-layouts');
 
 var index = require('./routes/index');
@@ -17,8 +17,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // express-ejs-layouts
 app.use(expressLayouts);
+
+app.use(useragent.express(),function (req,res,next){
+  if (req.useragent.isDesktop){
+    // 自定义layout.ejs的位置
+    app.set('layout', 'layouts/mobile/layout');
+  } else {
+    app.set('layout', 'layouts/web/layout');
+  }
+  next();
+});
 // 自定义layout.ejs的位置
-app.set('layout', 'layouts/web/layout');
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -26,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/', index);
 app.use('/users', users);
 

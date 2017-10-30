@@ -1,0 +1,120 @@
+<header class="layout-header">
+    <div class="layout-header-logo-wrapper">
+        <img class="layout-header-logo" src="/images/logo.png" alt="logo"/>
+    </div>
+    <div class="layout-header-nav-wrapper">
+        <ul class="layout-header-nav">
+            <li id="h1" class="layout-header-nav-item"><a href="/#">首页</a></li>
+            <li id="h2" class="layout-header-nav-item"><a href="#notices">大赛简介</a></li>
+            <li id="h3" class="layout-header-nav-item"><a href="#intro">参赛题目</a></li>
+            <!--<li class="layout-header-nav-item"><a href="/pages/news.html#">大赛新闻</a></li>
+            <li class="layout-header-nav-item"><a href="/pages/experts.html#">评审专家</a></li>
+            <li class="layout-header-nav-item"><a href="/pages/history.html#">历届回顾</a></li>-->
+            <li id="h4" class="layout-header-nav-item"><a href="#flow">竞赛要求</a></li>
+            <li id="h5" class="layout-header-nav-item"><a href="#way">参赛办法</a></li>
+            <li id="h6" class="layout-header-nav-item"><a href="#awards">奖项设置</a></li>
+            <li id="h7" class="layout-header-nav-item"><a href="#attention">注意事项</a></li>
+            <li class="layout-header-nav-item-right"><a href="http://stbei.com">圣陶杯</a></li>
+        </ul>
+    </div>
+
+</header>
+<script>
+    $(function () {
+        if('/'==window.location.pathname) {
+            $('#h1 a').addClass('curr');
+        }else if ('/pages/intro.html' ==window.location.pathname) {
+             $('#h2 a').addClass('curr');
+        } else if('/pages/rules.html' ==window.location.pathname) {
+            $('#h3 a').addClass('curr');
+        } else if('/pages/registration.html' ==window.location.pathname) {
+            $('#h4 a').addClass('curr');
+        } else if('/pages/contact.html' ==window.location.pathname) {
+            $('#h5 a').addClass('curr');
+        }
+    })
+</script>
+<style>
+    .layout-header {
+        color: white;
+    }
+
+    .layout-header-logo-wrapper {
+        width: 1200px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .layout-header-logo {
+        margin-top:10px;
+    }
+
+    .layout-header-nav-wrapper {
+        background-color: #08c68a;
+        width: 100%;
+        min-width: 1200px;
+    }
+
+    .layout-header-nav {
+        width: 1200px;
+        height: 48px;
+        margin: 0 auto;
+        display: block;
+        list-style: none;
+    }
+
+    .layout-header-nav-item {
+        float: left;
+        width: 96px;
+        height: 48px;
+        margin: 0px 10px;
+        text-align: center;
+        line-height: 48px;
+        vertical-align: middle;
+    }
+
+    .layout-header-nav-item:hover {
+        background-color: #ffbb1c;
+    }
+
+    .layout-header-nav-item a {
+        color: #FFFFFF;
+        font-size: 16px;
+        display: inline-block;
+        width: 96px;
+        height: 48px;
+    }
+
+    .layout-header-nav-item a:hover {
+        background: url(/images/hover.png) no-repeat;
+        width:96px;
+        height:54px;
+    }
+
+    .layout-header-nav-item a.curr {
+        background: url(/images/hover.png) no-repeat;
+        width:96px;
+        height:54px;
+    }
+
+    .layout-header-nav-item-right{
+        float:right;
+        background: url(/images/right-nav.png) no-repeat;
+        width:137px;
+        height:48px;
+        text-align: center;
+    }
+
+    .layout-header-nav-item-right a{
+        color: #FFFFFF;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 48px;
+        width:137px;
+        height:48px;
+    }
+
+    .layout-main{
+        min-width: 1200px;
+    }
+</style>
