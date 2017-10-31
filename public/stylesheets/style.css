@@ -1,8 +1,78 @@
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font: 14px "微软雅黑", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+.layout-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+body,
+html,
+li,
+input,
+gloabl,
+th,
+input,
+nav,
+td,
+embed,
+blockquote,
+ol,
+xml,
+div,
+dl,
+dt,
+dd,
+ul,
+pre,
+form,
+fieldset,
+abbr,
+header,
+hgroup,
+Section,
+figure,
+section,
+nav,
+article,
+aside,
+canvas,
+button,
+ul li,
+font,
+a,
+span,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+select{
+margin: 0;
+padding: 0;
+font-family: 'Microsoft YaHei';
+outline: none;
+}
+ol,
+ul,
+li {
+list-style: none;
 }
